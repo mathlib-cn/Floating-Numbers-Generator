@@ -1,5 +1,5 @@
 /* Typhoon 20190109 */
-/* Generate Float Numbers */
+/* Generate Double-precision Floating Point Number */
 /* We aussume sign bit as 0 and travers exponent bits from 0 to 2047.
    All 0 and all 1 is meaningless so the acutual range is 1~2046 .
    For fraction bits ,we travers first n bits("n" is defined in typh_const_num.h),
