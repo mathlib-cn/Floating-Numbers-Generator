@@ -2,7 +2,7 @@
 /* Generate Double-precision Floating Point Number */
 /* We aussume sign bit as 0 and travers exponent bits from 0 to 2047.
    All 0 and all 1 is meaningless so the acutual range is 1~2046 .
-   For fraction bits ,we travers first n bits("n" is defined in typh_const_num.h),
+   For fraction bits ,we travers first n bits("n" is defined by FRA_TRAVERSED_COUNT_DOUBLE),
    and the rest bits can be either 1 or 0 */
 /* Updated by Typhoon 20200412 */
 /* We aussume sign bit can be either 1 or 0 */
@@ -19,7 +19,6 @@
 
 int main(int argc,char *argv[]) 
 {
-	//double input32;
 	int sign;  //we aussume it positive as it makes no difference
 	int exponent;  //(-1023~1024)according to the bais,the actual range is 0~2047 without all 0 and all 1
 	unsigned long fraction;  //travers first n bits,and the rest bits can be either 1 or 0 
@@ -51,7 +50,7 @@ int main(int argc,char *argv[])
 					}	
 					ii=ii>>1;
 				}
-				firstFraction+=pow(2,51);	//the fisrt bit must be 1 as metioned above
+				firstFraction+=pow(2,51);	//the fisrt bit must be 1 as mentioned above
 		
 				/* generate the rest fraction bits */	
 				restFraction=rand()%(restMaxVal+1);
