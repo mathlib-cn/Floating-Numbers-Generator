@@ -18,7 +18,7 @@
 int main(int argc,char *argv[]) 
 {	
 	int sign;  //we aussume it positive as it makes no difference
-	int exponent;  //(-1023~1024)according to the bais,the actual range is 0~2047 without all 0 and all 1
+	int exponent;  //(-127~128)according to the bais,the actual range is 0~256 without all 0 and all 1
 	unsigned long fraction;  //travers first n bits,and the rest bits can be either 1 or 0 
 	long restMaxVal=pow(2,23- FRA_TRAVERSED_COUNT_SINGLE)-1;//FRA_TRAVERSED_COUNT_SINGLE=12
 	long restFraction=0;
